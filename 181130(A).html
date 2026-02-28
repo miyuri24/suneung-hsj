@@ -6,61 +6,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.css" integrity="sha384-fgYS3VC1089n2J3rVcEbXDHlnDLQ9B2Y1hvpQ720q1NvxCduQqT4JoGc4u2QCnzE" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.js" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/contrib/auto-render.min.js" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
-        ],
-        throwOnError : false
-      });
-    });
-  </script>
+  <script defer src="/js/main.js"></script>
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Orbit&display=swap" rel="stylesheet">
   <title>2019학년도 수능 수학 (가)형 30번 해설</title>
-  <style>
-    hr {
-      width: 70%;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-    h2 {
-      margin-top: 30px;
-      text-align: center;
-      font-family: "Orbit", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 20pt;
-    }
-    iframe {
-      width: 100%;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      text-align: justify;
-      font-family: "Gowun Batang", serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 13pt;
-    }
-    .link {
-      font-size: 10pt;
-      text-decoration: none;
-      color: gray;
-    }
-    .link:hover {
-      color: skyblue;
-      transition: 0.5s;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
   <div class="container">
+    <a href="/index.html">◀ Go Back to Search Tree</a>
     <h2>문제</h2>
     <p>최고차항의 계수가 $6\pi$인 삼차함수 $f(x)$에 대하여 함수 $g(x)=\dfrac1{2+\sin(f(x))}$이 $x=\alpha$에서 극대 또는 극소이고, $\alpha\ge0$인 모든 $\alpha$를 작은 수부터 크기순으로 나열한 것을 $\alpha_1,\space\alpha_2,\space\alpha_3,\space\alpha_4,\space\alpha_5,\space\dotsm$라 할 때, $g(x)$는 다음 조건을 만족시킨다.</p>
     <ul>
@@ -68,7 +24,7 @@
       <li>(나) $\dfrac1{g(\alpha_5)}=\dfrac1{g(\alpha_2)}+\dfrac12$</li>
     </ul>
     <p>$g'\left(-\dfrac12\right)=a\pi$라 할 때, $a^2$의 값을 구하시오. (단, $0< f(0)<\dfrac\pi2$)</p>
-    <a class="link" href="https://www.suneung.re.kr/boardCnts/view.do?boardID=1500234&boardSeq=5031123&lev=0&m=0403&searchType=S&statusYN=W&page=6&s=suneung" target="_blank">문제 - 2019학년도 대학수학능력시험 수학영역 30번 (가형)</a>
+    <a href="https://www.suneung.re.kr/boardCnts/view.do?boardID=1500234&boardSeq=5031123&lev=0&m=0403&searchType=S&statusYN=W&page=6&s=suneung" target="_blank">문제 - 2019학년도 대학수학능력시험 수학영역 30번 (가형)</a>
     <hr>
     <h2>해설</h2>
     <p>$g(x)=\dfrac1{2+\sin(f(x))}$가 극값을 갖는 경우는 $\sin(f(x))$가 극값을 가질 때이다. $f(x)=t$라 하고 $y=\sin t$의 그래프를 살펴보자.</p>
