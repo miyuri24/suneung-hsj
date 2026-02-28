@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.css" integrity="sha384-fgYS3VC1089n2J3rVcEbXDHlnDLQ9B2Y1hvpQ720q1NvxCduQqT4JoGc4u2QCnzE" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.js" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/contrib/auto-render.min.js" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError : false
+      });
+    });
+  </script>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Orbit&display=swap" rel="stylesheet">
+  <title>2019학년도 수능 수학 (가)형 30번 해설</title>
+  <style>
+    hr {
+      width: 70%;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    h2 {
+      margin-top: 30px;
+      text-align: center;
+      font-family: "Orbit", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20pt;
+    }
+    iframe {
+      width: 100%;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
+      font-family: "Gowun Batang", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 13pt;
+    }
+    .link {
+      font-size: 10pt;
+      text-decoration: none;
+      color: gray;
+    }
+    .link:hover {
+      color: skyblue;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>문제</h2>
+    <p>최고차항의 계수가 $6\pi$인 삼차함수 $f(x)$에 대하여 함수 $g(x)=\dfrac1{2+\sin(f(x))}$이 $x=\alpha$에서 극대 또는 극소이고, $\alpha\ge0$인 모든 $\alpha$를 작은 수부터 크기순으로 나열한 것을 $\alpha_1,\space\alpha_2,\space\alpha_3,\space\alpha_4,\space\alpha_5,\space\dotsm$라 할 때, $g(x)$는 다음 조건을 만족시킨다.</p>
+    <ul>
+      <li>(가) $\alpha_1=0$이고 $g(\alpha_1)=\dfrac25$이다.</li>
+      <li>(나) $\dfrac1{g(\alpha_5)}=\dfrac1{g(\alpha_2)}+\dfrac12$</li>
+    </ul>
+    <p>$g'\left(-\dfrac12\right)=a\pi$라 할 때, $a^2$의 값을 구하시오. (단, $0< f(0)<\dfrac\pi2$)</p>
+    <a class="link" href="https://www.suneung.re.kr/boardCnts/view.do?boardID=1500234&boardSeq=5031123&lev=0&m=0403&searchType=S&statusYN=W&page=6&s=suneung" target="_blank">문제 - 2019학년도 대학수학능력시험 수학영역 30번 (가형)</a>
+    <hr>
+    <h2>해설</h2>
+    <p>$g(x)=\dfrac1{2+\sin(f(x))}$가 극값을 갖는 경우는 $\sin(f(x))$가 극값을 가질 때이다. $f(x)=t$라 하고 $y=\sin t$의 그래프를 살펴보자.</p>
+    <iframe src="https://www.desmos.com/calculator/tskt5lwuif?embed" height="300" frameborder=0></iframe>
+    <p>기본적으로 $y=\sin t$는 $t=\dfrac{2n+1}2\pi$에서 극값을 가지며, $t=f(x)$가 이 지점들을 '통과할 때' $g(x)$에서 극값이 생긴다고 볼 수 있다. ($n$은 정수)</p>
+    <p>(가)조건에서 $g(0)=\dfrac1{2+\sin(f(0))}=\dfrac25$이므로 $\sin(f(0))=\dfrac12$이고, 문제 하단에서 $0< f(0)<\dfrac\pi2$라 주어졌으므로 $f(0)=\dfrac\pi6$이다. 이때 $t=\dfrac\pi6$에서 $g(x)$가 극값을 가지는데, 이 경우는 위에서 살펴봤던 일반적인 경우인 "$t$가 $\dfrac{2n+1}2\pi$를 <u>통과하는</u> 경우"에 해당하지 않는다. 따라서 이 경우에는 $t=f(x)$ 자체가 극값을 가져서, $y=\sin t$가 극값을 가지는 경우라 생각할 수 있다. 이때 $f(x)$가 $x=0$에서 극대인 경우와 극소인 경우로 케이스가 나뉘게 된다.</p>
+    <h2 style="text-align:justify;margin-left:30px;">I. 극소</h2>
+    <iframe src="https://www.desmos.com/calculator/jk1rprzyyi?embed" height="500" frameborder=0></iframe>
+    <p>$t=f(x)$가 $x=0$에서 극소라면 $f(x)$가 삼차함수이므로 이후의 구간에서 계속해서 증가하므로 개형은 하나로 정해지고, 처음에 본 '특수한 지점'들을 뚫는 교점에서의 $x$값이 차례대로 수열 $\{\alpha_n\}$의 값이 된다. 따라서 $\sin(f(\alpha_2))=1$이고 $\sin(f(\alpha_5))=-1$이다.</p>
+    <p>$g(x)=\dfrac1{2+\sin(f(x))}$에서 $\dfrac1{g(x)}=\sin(f(x))+2$이므로 (나)조건은 $\sin(f(\alpha_5))=\sin(f(\alpha_2))+\dfrac12$와 같다. 이때 $\sin(f(\alpha_2))=1,\space\sin(f(\alpha_5))=-1$는 해당 식을 만족하지 못하므로 $f(x)$가 $x=0$에서 극소라면 (나)조건에 모순이다.</p>
+    <h2 style="text-align:justify;margin-left:30px;">II. 극대</h2>
+    <p>$f(x)$가 $x=0$에서 극대라면 이후 구간에서 감소하다가 어느 순간에 극소점을 찍고 다시 증가하게 된다. $f(x)$의 극대점이 <u>통과하는 지점</u> 외의 곳에서 $g(x)$의 극값을 만든다는 점에서, $f(x)$의 극소점 또한 <u>통과하는 지점</u> 외의 곳에서 $g(x)$의 극값을 만들 수 있다. 케이스 I에서 살펴본 것에 따르면 $\sin(f(\alpha))$가 모두 $\pm1$이면 (나)조건을 만족시킬 수 없으므로 이 경우에 극솟값은 반드시 $\dfrac{2n+1}2$이 아닌 값을 가져서 (나)조건을 만족시켜야한다. 이때 의미가 있는 값들은 (나)조건에서 사용되는 $\alpha_2$와 $\alpha_5$ 뿐이므로, 각각이 극소인 경우로 케이스를 나눠볼 수 있다.</p>
+    <h2 style="text-align:justify;margin-left:30px;">II-1. $\alpha_2$가 극소</h2>
+    <p>만약 $f(x)$의 극솟값이 $-\dfrac\pi2$보다 작아진다면 $x$가 $\alpha_2$ 가 되기 이전에 $t=f(x)$와 $t=\dfrac{2n+1}2$의 교점이 생기므로 그 교점이 $\alpha_2$가 된다. 따라서 이 경우 $f(x)$의 극솟값은 $-\dfrac\pi2$보다 크다.</p>
+    <iframe src="https://www.desmos.com/calculator/0w004wo0cy?embed" height="500" frameborder=0></iframe>
+    <p>이때 $\sin(f(\alpha_5))=1$이므로 (나)조건 $\sin(f(\alpha_5))=\sin(f(\alpha_2))+\dfrac12$에 따라 $\sin(f(\alpha_2))=\dfrac12$가 되어야한다. 그런데 $-\dfrac\pi2< f(\alpha_2)<\dfrac\pi6$이므로 이 구간에서 $\sin(f(\alpha_2))=\dfrac12$를 만족시키는 $f(\alpha_2)$는 존재하지 않는다(처음 $y=\sin t$ 그래프 참고). 따라서 $f(x)$가 $x=\alpha_2$에서 극소이면 (나)조건에 모순이다.</p>
+    <h2 style="text-align:justify;margin-left:30px;">II-2. $\alpha_5$가 극소</h2>
+    <p>$x=\alpha_5$가 되기 이전까지 $f(x)$는 감소하므로 그 구간에서 $t=\dfrac{2n+1}2$와 3번의 교점을 가져야한다. 따라서 $-3.5\pi< f(\alpha_5)<-2.5\pi$이다.</p>
+    <iframe src="https://www.desmos.com/calculator/tp6foidxlr?embed" height="500" frameborder=0></iframe>
+    <p>이때 $\sin(f(\alpha_2))=-1$이므로 (나)조건에 따라 $\sin(f(\alpha_5))=-\dfrac12$이고, 주어진 범위에서 해당 값을 갖는 $f(\alpha_5)$값은 $-3\pi+\dfrac\pi6$이 유일하다(처음 $y=\sin t$ 그래프 참고).</p>
+    <p>$f(x)=6\pi x^3+\dotsm$에서 $f'(x)=18\pi x^2+\dotsm$이고, $x=0$에서 극대, $x=\alpha_5$에서 극소이므로 $f'(x)=18\pi x(x-\alpha_5)$이다. $f(x)$의 극대와 극소의 차가 $3\pi$이므로 $y=f'(x)$와 $x$축으로 둘러싸인 부분의 넓이는 $\dfrac{18\pi}6(\alpha_5-0)^3=3\pi$에서 $\alpha_5=1$이다.</p>
+    $$f'(x)=18\pi x^2-18\pi x,\quad f(x)=6\pi x^3-9\pi x^2+\frac\pi6\\\space\\g(x)=\frac1{2+\sin(f(x))},\quad g'(x)=-\frac{\cos(f(x))\cdot f'(x)}{(2+\sin(f(x)))^2}\\\space\\\begin{cases}f\left(-\dfrac12\right)=-3\pi+\dfrac\pi6\quad\Rarr\quad\begin{cases}\sin\left(f\left(-\frac12\right)\right)=-\frac12\\\cos\left(f\left(-\frac12\right)\right)=-\frac{\sqrt3}2\end{cases}\\f'\left(-\dfrac12\right)=\dfrac{27}2\pi\end{cases}\\\space\\\therefore g'\left(-\frac12\right)=-\frac{-\frac{\sqrt3}2\cdot\frac{27}2\pi}{(2-\frac12)^2}=3\sqrt3\pi$$
+    <p>따라서 $a=3\sqrt3$이므로 답은 $27$.</p>
+  </div>
+</body>
+</html>
