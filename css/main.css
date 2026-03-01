@@ -39,3 +39,10 @@ a:hover {
   font-style: normal;
   font-size: 13pt;
 }
+.comment {
+  text-align: center;
+  color: gray;
+  font-size: 10pt;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
