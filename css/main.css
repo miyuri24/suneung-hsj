@@ -30,6 +30,25 @@ a:hover {
   color: skyblue;
   transition: 0.5s;
 }
+details {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::before {
+  content: "▶  ";
+}
+details[open] > summary::before {
+  content: "▼ ";
+}
 .container {
   max-width: 900px;
   margin: auto;
