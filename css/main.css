@@ -21,6 +21,10 @@ h3 {
 iframe {
   width: 100%;
 }
+hr {
+  border: none;
+  border-top: 1px solid gray;
+}
 a {
   font-size: 10pt;
   text-decoration: none;
@@ -49,6 +53,14 @@ summary::before {
 details[open] > summary::before {
   content: "▼ ";
 }
+ul {
+  border: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+li {
+  margin-left: 10px;
+}
 .container {
   max-width: 900px;
   margin: auto;
@@ -58,10 +70,28 @@ details[open] > summary::before {
   font-style: normal;
   font-size: 13pt;
 }
+.case {
+  text-align: justify;
+  margin-left: 30px;
+}
+.equation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
 .comment {
   text-align: center;
   color: gray;
   font-size: 10pt;
   margin-top: 200px;
   margin-bottom: 50px;
+}
+.con-1::marker {
+  content: '(가) ';
+}
+.con-2::marker {
+  content: '(나) ';
+}
+.con-3::marker {
+  content: '(다) ';
 }
