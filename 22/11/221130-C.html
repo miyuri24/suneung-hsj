@@ -20,8 +20,8 @@
     <h2>문제</h2>
     <p>최고차항의 계수가 양수인 삼차함수 $f(x)$와 함수 $g(x)=e^{\sin\pi x}-1$에 대하여 실수 전체의 집합에서 정의된 합성함수 $h(x)=g(f(x))$가 다음 조건을 만족시킨다.</p>
     <ul>
-      <li>(가) 함수 $h(x)$는 $x=0$에서 극댓값 $0$을 갖는다.</li>
-      <li>(나) 열린구간 $(0,3)$에서 방정식 $h(x)=1$의 서로 다른 실근의 개수는 $7$이다.</li>
+      <li class="con-1">함수 $h(x)$는 $x=0$에서 극댓값 $0$을 갖는다.</li>
+      <li class="con-2">열린구간 $(0,3)$에서 방정식 $h(x)=1$의 서로 다른 실근의 개수는 $7$이다.</li>
     </ul>
     <p>$f(3)=\dfrac12,\space f'(3)=0$일 때, $f(2)=\dfrac qp$이다. $p+q$의 값을 구하시오. (단, $p$와 $q$는 서로소인 자연수이다.)</p>
     <a href="https://www.suneung.re.kr/boardCnts/view.do?boardID=1500234&boardSeq=5080828&lev=0&m=0403&searchType=S&statusYN=W&page=3&s=suneung" target="_blank">문제 - 2023학년도 대학수학능력시험 수학영역 30번 (미적분)</a>
@@ -41,11 +41,11 @@
       <p>$t$가 $f(3)=\dfrac12$에서 출발하여 $f(0)$까지 증가한다고 바라본다면 $f(0)$이 최소 $7$이 되어야 $\dfrac12\le t\le7$에서 $y=\sin\pi t$가 $y=\ln2$와 7번 만나게 된다. 하지만 (가)조건을 생각해보면 $\sin\pi f(x)$는 $x=0$에서 '음수→0→음수'(증가→0→감소)의 형태가 되어야 한다. $f(0)=7$이라면 $x=0$ 근처에서 $f(x)$의 값은 $f(0)$보다 커야하므로 $t$가 $7$보다 작은 $\dfrac12$에서 <u>증가만 해서</u> $7$에 도달하는 건 불가능하다.</p>
       <p>이 점을 생각해보면 $f(0)$의 조건은 '증가하다가 정수에서 최대를 찍고 감소하는' 지점이기 때문에 $8$이 됨을 알 수 있다. $8$ 다음으로 해당 조건을 만족하는 정수는 $10$인데, $f(0)=10$이라면 $t$가 증가하며 $\ln2$와 총 $10$번 만나게 되므로 $f(0)$은 $10$이 될 수 없다.</p>
     </details>
-    <iframe src="https://www.desmos.com/calculator/oickxleiom?embed" height="500" frameborder=0></iframe>
+    <iframe src="https://www.desmos.com/calculator/ueubgbxhkm?embed" height="500" frameborder=0></iframe>
     <details>
       <summary>추가: 만약 최고차항이 음수라면</summary>
       <p>$f(x)$는 $x=0$에서 극소, $x=3$에서 극대를 가지므로 위와 같은 과정을 거치면 $f(0)=-7$임을 알 수 있다.</p>
-      <iframe src="https://www.desmos.com/calculator/kxcr6zwrqo?embed" height="500" frameborder=0></iframe>
+      <iframe src="https://www.desmos.com/calculator/bbpeazkzpi?embed" height="500" frameborder=0></iframe>
     </details>
     <p>$f(x)$가 $x=0$, $x=3$에서 극값을 가지므로 $f'(x)=ax(x-3)$으로 설정하고, 극값의 차가 $\dfrac{15}2$이므로 $\dfrac a6(3-0)^3=\dfrac{15}2$에서 $a=\dfrac53$이다.</p>
     $$f'(x)=\dfrac53x(x-3)=\dfrac53x^2-5x^2\\\space\\\therefore f(x)=\dfrac59x^3-\dfrac52x^2+8\quad(\because f(0)=8)$$
@@ -54,4 +54,3 @@
   </div>
 </body>
 </html>
-
