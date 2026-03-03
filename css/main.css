@@ -53,11 +53,6 @@ summary::before {
 details[open] > summary::before {
   content: "▼ ";
 }
-ul {
-  border: 1px solid black;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
 li {
   margin-left: 10px;
 }
@@ -85,6 +80,11 @@ li {
   font-size: 10pt;
   margin-top: 200px;
   margin-bottom: 50px;
+}
+.con-box {
+  border: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .con-1::marker {
   content: '(가) ';
