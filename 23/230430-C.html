@@ -41,7 +41,7 @@
       <li>홀수에서, $f(x)$가 꺾이고 왼쪽에 대칭인 형태로 내려가므로 $f'(x)$는 그 부분에서 부호 점프를 한 뒤 같은 형태로 내려간다.</li>
       <li>짝수에서, $f(x)$의 증감 여부는 그대로지만 $y$방향으로 $\dfrac12$배만큼 축소되기 때문에 절반만큼 떨어진다.</li>
     </ol>
-    <p>$g(x)$는 $f'(x)$가 연속이면 $2f'(x)$이기 때문에 $f'(x)$의 개형은 그대로 유지하되(값은 2배다) $f'(x)$가 불연속인 지점에서만 신경써주면 된다.</p>
+    <p>$g(x)$는 $f'(x)$가 연속이면 $2f'(x)$이기 때문에 $f'(x)$의 개형은 그대로 유지하며(값은 2배다) $f'(x)$가 불연속인 지점에서만 신경써주면 된다.</p>
     <iframe src="https://www.desmos.com/calculator/9eyvdajpxm?embed" height="500" frameborder=0></iframe>
     <iframe src="https://www.desmos.com/calculator/6jdxiaqp2v?embed" height="500" frameborder=0></iframe>
     <p>$g(x)$의 특징은 다음과 같다.</p>
@@ -65,7 +65,7 @@
     <p>$k$번째 짝수는 $2k$이므로, 위와 같은 방식으로 주어진 식을 $k$에 대한 식으로 나타내보자.</p>
     <iframe src="https://www.desmos.com/calculator/ethaubhgvp?embed" height="400" frameborder=0></iframe>
     $$g(n^+)-g(n^-)+2g(n)=\dfrac{\ln2}{2^{24}}$$
-    <p>$n=4$, 즉 $k=2$일 때를 기준으로 수식을 만들어보자. 위에서와 마찬가지로 모든 값은 기본적으로 $\dfrac1{2^k}$와 비례관계에 있으므로 비례상수만 잘 정해주면 된다.</p>
+    <p>$n=4$, 즉 $k=2$일 때를 기준으로 수식을 만들어보자. 위에서와 마찬가지로 모든 값은 기본적으로 $\dfrac1{2^k}$과 비례관계에 있으므로 비례상수만 잘 정해주면 된다.</p>
     <p>좌극한, 우극한, 함숫값을 각각 $\dfrac c{2^k}\ln2$ 꼴의 형태로 두고 $k=2$를 대입하여 값이 맞도록 $c$를 조절하면 각각의 값은 아래와 같으므로 위 수식의 값 또한 구해줄 수 있다.</p>
     $$\begin{cases}g(n^+)=\dfrac2{2^k}\ln2\\\\g(n)=\dfrac3{2^k}\ln2\\\\g(n^-)=\dfrac4{2^k}\ln2\end{cases}\\\space\\\begin{aligned}g(n^+)-g(n^-)+2g(n)&=\dfrac2{2^k}\ln2-\dfrac4{2^k}\ln2+\dfrac6{2^k}\ln2\\&=\dfrac1{2^{k-2}}\ln2\end{aligned}$$
     <p>따라서 $k-2=24$에서 $k=26$이고, $k$가 짝수가 맞으므로 이 경우 $n$의 값은 $n=2k=52$이다.</p>
