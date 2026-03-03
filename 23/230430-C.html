@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.css" integrity="sha384-fgYS3VC1089n2J3rVcEbXDHlnDLQ9B2Y1hvpQ720q1NvxCduQqT4JoGc4u2QCnzE" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.js" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/contrib/auto-render.min.js" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" crossorigin="anonymous"></script>
+  <script defer src="../js/main.js"></script>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Orbit&display=swap" rel="stylesheet">
+  <title>2023년 4월 미적분 30번</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html">◀ Search Tree로 돌아가기</a>
+    <h2>문제</h2>
+    <p>$x\ge0$에서 정의된 함수 $f(x)$가 다음 조건을 만족시킨다.</p>
+    <ul class="con-box">
+      <li class="con-1">$f(x)=\begin{cases}2^x-1&(0\le x\le1)\\4\times\left(\dfrac12\right)^x-1&(1< x\le 2)\end{cases}$</li>
+      <li class="con-2">모든 양의 실수 $x$에 대하여 $f(x+2)=-\dfrac12f(x)$이다.</li>
+    </ul>
+    <p>$x>0$에서 정의된 함수 $g(x)$를</p>
+    <p class="equation">$g(x)=\lim\limits_{h\to0+}\dfrac{f(x+h)-f(x-h)}h$</p>
+    <p>라 할 때,</p>
+    <p class="equation">$\lim\limits_{t\to0+}\{g(n+t)-g(n-t)\}+2g(n)=\dfrac{\ln2}{2^{24}}$</p>
+    <p>를 만족시키는 모든 자연수 $n$의 값의 합을 구하시오.</p>
+    <p style="font-size:10pt;color:gray;">문제 - 2023년 4월 전국연합학력평가 수학영역 30번 (미적분)</a>
+    <hr>
+    <h2>해설</h2>
+    <p>$[0,2]$에서 $f(x)$를 그려보는 것에서 시작하자. $(1,2]$에서 $f(x)=2^{2-x}-1$이므로 $x=1$을 기준으로 대칭이라는 점을 알 수 있다. 또한, 주기함수처럼 보이지만 앞으로 $2$ 전진할 때 $\dfrac12$배로 줄어들며 부호가 바뀌기 때문에, $f(x)$는 위-아래로 왔다갔다 하면서 점점 크기가 줄어드는 고깔모자 형태이다.</p>
+    <iframe src="https://www.desmos.com/calculator/xw1y3fjzwa?embed" height="300" frameborder=0></iframe>
+    <p>$g(x)$를 살펴보자. 최종적으로 구해야하는 값이 $g(x)$ 중 자연수 정의역이고, $f(x)$가 자연수에서 꺾여있어서 미분가능하지 않으므로 조심히 변형해야한다.</p>
+    $$\begin{aligned}g(x)&=\lim\limits_{h\to0+}\dfrac{f(x+h)-f(x-h)}h\\&=\lim\limits_{h\to0+}\left[\dfrac{f(x+h)-f(x)}h-\dfrac{f(x-h)-f(x)}h\right]\\&=\lim\limits_{h\to0+}\left[\dfrac{f(x+h)-f(x)}h+\dfrac{f(x-h)-f(x)}{-h}\right]\\&=\lim\limits_{h\to0+}\dfrac{f(x+h)-f(x)}h+\lim\limits_{h\to0-}\dfrac{f(x+h)-f(x)}h\\&=f'(x^+)+f'(x^-)\end{aligned}$$
+    <p>따라서 $g(x)$는 $f(x)$의 우미분계수와 좌미분계수의 합이다. $g(x)$를 조금 더 자세히 보기 위해 $f'(x)$를 그리고 그 아래 $g(x)$를 함께 그려보자.</p>
+    <p>$f'(x)$에서 눈여겨볼만한 부분들은 다음과 같다:</p>
+    <ol>
+      <li>홀수에서, $f(x)$가 꺾이고 왼쪽에 대칭인 형태로 내려가므로 $f'(x)$는 그 부분에서 부호 점프를 한 뒤 같은 형태로 내려간다.</li>
+      <li>짝수에서, $f(x)$의 증감 여부는 그대로지만 $y$방향으로 $\dfrac12$배만큼 축소되기 때문에 절반만큼 떨어진다.</li>
+    </ol>
+    <p>$g(x)$는 $f'(x)$가 연속이면 $2f'(x)$이기 때문에 $f'(x)$의 개형은 그대로 유지하되(값은 2배다) $f'(x)$가 불연속인 지점에서만 신경써주면 된다.</p>
+    <iframe src="https://www.desmos.com/calculator/9eyvdajpxm?embed" height="500" frameborder=0></iframe>
+    <iframe src="https://www.desmos.com/calculator/6jdxiaqp2v?embed" height="500" frameborder=0></iframe>
+    <p>$g(x)$의 특징은 다음과 같다.</p>
+    <ol>
+      <li>$n$이 홀수일 때 $f'(x)$가 양옆에서 부호가 반대이므로 $g(n)=0$이 된다.</li>
+      <li>$n$이 짝수일 때 $g(n)$은 그 양옆 값의 중간값이 된다.</li>
+    </ol>
+    <p>이제 최종적으로 구해야하는 식을 보자.</p>
+    $$\begin{aligned}\lim\limits_{t\to0+}\{g(n+t)-g(n-t)\}+2g(n)&=\dfrac{\ln2}{2^{24}}\\g(n^+)-g(n^-)+2g(n)&=\dfrac{\ln2}{2^{24}}\end{aligned}$$
+    <p>$n$이 홀수라면 뒤의 $2g(n)$은 $0$이 되어서 앞의 두 항만 신경쓰면 된다. 그런데 $n$이 '홀수번째' 홀수라면($1,5,9,\dotsm$) 우극한이 음수, 좌극한이 양수이므로 [우극한-좌극한=음수]가 되어서 애초에 양수인 $\dfrac{\ln2}{2^{24}}$가 될 가능성은 없다. 따라서 $n$이 홀수라면 '짝수번째' 홀수여야한다($3,7,11,\dotsm$).</p>
+    <p>마찬가지로 $n$이 짝수일 때에도 $n$이 '홀수번째' 짝수($2,6,10,\dotsm$)라면 우선 뒤의 $+2g(n)$이 음수이며, $-g(n^-)$가 양수긴 하지만 앞의 $g(n^+)$가 더 작은 음수여서 전체 식의 값은 음수가 된다. 따라서 $n$이 짝수일 때에도 $n$은 '짝수번째' 짝수여야한다($4,8,12,\dotsm$).</p>
+    <h2 class="case">I. $n$이 홀수</h2>
+    <p>$k$번째 홀수는 $2k-1$이다. 따라서 '짝수번째 홀수'라는 건 $k$가 짝수일 때 나오는 $2k-1$들이다. 마지막에 구한 $k$가 짝수인지만 확인해주자.</p>
+    <iframe src="https://www.desmos.com/calculator/emxgqty1at?embed" height="300" frameborder=0></iframe>
+    $$g(n^+)-g(n^-)+2g(n)=\dfrac{\ln2}{2^{24}}$$
+    <p>$n=3$, 즉 $k=2$일 때를 기준으로 수식을 만들어보자. 우선 $g(n)$은 $0$이며, 좌극한과 우극한은 부호만 다르고 크기만 같으므로 우극한값만 구해보자.</p>
+    <p>$g(x)$는 $f(x)$의 특징인 $f(x+2)=-\dfrac12f(x)$를 그대로 가져오므로, 우극한값은 밑이 2인 지수함수 꼴로 감소하는 $\dfrac c{2^k}\ln2$ 형태임을 유추할 수 있다. $k=2$일 때 이 식의 값이 $2\ln2$가 되어야하므로 $c=8$로 구할 수 있다. 따라서</p>
+    $$\begin{aligned}g(n^+)-g(n^-)&=\dfrac8{2^k}\ln2+\dfrac8{2^k}\ln2\\&=\dfrac1{2^{k-4}}\ln2\end{aligned}$$
+    <p>이므로 $k-4=24$에서 $k=28$이다. 짝수번째 홀수에 대해서만 보는데 $k$가 짝수가 맞으므로 이 경우 $n$의 값은 $n=2k-1=55$이다.</p>
+    <h2 class="case">II. $n$이 짝수</h2>
+    <p>$k$번째 짝수는 $2k$이므로, 위와 같은 방식으로 주어진 식을 $k$에 대한 식으로 나타내보자.</p>
+    <iframe src="https://www.desmos.com/calculator/ethaubhgvp?embed" height="400" frameborder=0></iframe>
+    $$g(n^+)-g(n^-)+2g(n)=\dfrac{\ln2}{2^{24}}$$
+    <p>$n=4$, 즉 $k=2$일 때를 기준으로 수식을 만들어보자. 위에서와 마찬가지로 모든 값은 기본적으로 $\dfrac1{2^k}$와 비례관계에 있으므로 비례상수만 잘 정해주면 된다.</p>
+    <p>좌극한, 우극한, 함숫값을 각각 $\dfrac c{2^k}\ln2$ 꼴의 형태로 두고 $k=2$를 대입하여 값이 맞도록 $c$를 조절하면 각각의 값은 아래와 같으므로 위 수식의 값 또한 구해줄 수 있다.</p>
+    $$\begin{cases}g(n^+)=\dfrac2{2^k}\ln2\\\\g(n)=\dfrac3{2^k}\ln2\\\\g(n^-)=\dfrac4{2^k}\ln2\end{cases}\\\space\\\begin{aligned}g(n^+)-g(n^-)+2g(n)&=\dfrac2{2^k}\ln2-\dfrac4{2^k}\ln2+\dfrac6{2^k}\ln2\\&=\dfrac1{2^{k-2}}\ln2\end{aligned}$$
+    <p>따라서 $k-2=24$에서 $k=26$이고, $k$가 짝수가 맞으므로 이 경우 $n$의 값은 $n=2k=52$이다.</p>
+    <p>그러므로 모든 $n$ 값의 합은 $55+52=107$이다.</p>
+    <p class="comment"><a href="../index.html">〈Search Tree로 돌아가기〉</a><br>2026.03.03 추가</p>
+  </div>
+</body>
+</html>
