@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.css" integrity="sha384-fgYS3VC1089n2J3rVcEbXDHlnDLQ9B2Y1hvpQ720q1NvxCduQqT4JoGc4u2QCnzE" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.js" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/contrib/auto-render.min.js" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" crossorigin="anonymous"></script>
+  <script defer src="../js/main.js"></script>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Orbit&display=swap" rel="stylesheet">
+  <title>2023학년도 수능 공통 22번</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html">◀ Search Tree로 돌아가기</a>
+    <h2>문제</h2>
+    <p>최고차항의 계수가 $1$인 삼차함수 $f(x)$와 실수 전체의 집합에서 연속인 함수 $g(x)$가 다음 조건을 만족시킬 때, $f(4)$의 값을 구하시오. </p>
+    <ul class="con-box">
+      <li class="con-1">모든 실수 $x$에 대하여<p class="equation">$f(x)=f(1)+(x-1)f'(g(x))$</p>이다.</li>
+      <li class="con-2">함수 $g(x)$의 최솟값은 $\dfrac52$이다.</li>
+      <li class="con-3">$f(0)=-3,\space f(g(1))=6$</li>
+    </ul>
+    <a href="https://www.suneung.re.kr/boardCnts/view.do?boardID=1500234&boardSeq=5080828&lev=0&m=0403&searchType=S&statusYN=W&page=3&s=suneung" target="_blank">문제 - 2023학년도 대학수학능력시험 수학영역 22번 (공통)</a>
+    <hr>
+    <h2>해설</h2>
+    <p>(가)조건의 식에서 $f(1)$을 좌변으로 넘기면</p>
+    $$f(x)-f(1)=(x-1)f'(g(x))$$
+    <p>$h(x)=f(x)-f(1)$라 하면 $h(x)$는 삼차함수이고 $h(1)=0$이므로 좌변을 $(x-1)(x^2+px+q)$로 쓸 수 있다.</p>
+    $$(x-1)(x^2+px+q)=(x-1)f'(g(x))$$
+    <p>여기서 $g(x)$가 연속이므로 $f'(g(x))$도 연속이고, 따라서 양변에서 $(x-1)$을 지워도 된다.</p>
+    $$f'(g(x))=x^2+px+q$$
+    <p>$p$와 $q$에 대해선 크게 신경쓰지 말자. 중요한 건, $f'(g(x))$가 최고차항의 계수가 $1$인 이차함수라는 데에 있다. 여기서 $f'(x)$는 최고차항의 계수가 $3$(양수)인 이차함수이므로, $g(x)=t$로 놓고 $t$축 위에서 $f'(t)$를 움직여보며 그 개형이 최고차항의 계수가 <u>양수</u>인 이차함수가 되도록 만들어보자.</p>
+    <h2 class="case">추론</h2>
+    <p>아이디어의 확장을 위해, 우선 (나)조건을 무시하고 $t$가 어떻게 움직일 때 $f'(t)$가 아래로 볼록한 이차함수가 되는지 살펴보자. 가장 간단한 경우는 $t$가 왼쪽 끝에서 오른쪽 끝으로 선형적으로 증가하는 경우이다.</p>
+    <iframe src="https://www.desmos.com/calculator/xmcpelas2n?embed" height="300" frameborder=0></iframe>
+    <details>
+      <summary>도움말</summary>
+      <p>$y=f(t)$가 축과 만나는지의 여부는 생각하지 말자. $t$축을 표기한 건 "$t$가 이렇게 움직일 때 $f'(t)$는 이렇게 움직인다"를 더 쉽게 볼 수 있게 하려고 추가했다.</p>
+    </details>
+    <p>또 다른 경우로 $t$가 쭉 감소했다가 다시 증가하는 그림일 수도 있다.</p>
+    <iframe src="https://www.desmos.com/calculator/i0nd48sl2w?embed" height="300" frameborder=0></iframe>
+    <p>이 두 경우 모두 $g(x)$를 잘 조절해주면 $f'(t)$를 최고차항의 계수가 $1$인 이차함수로 만들 수 있다. 그 이유는 위 두 가지 경우 모두 $f'(t)$의 개형이 '감소→극솟값→증가'(↘↗)이기 때문이다. $g(x)$는 연속함수라고만 주어졌으므로 개형만 맞는다면 $f'(g(x))$가 이차함수가 되도록 (그 식을 직접 구하진 못하더라도) $g(x)$를 만들어주면 그만이다.</p>
+    <p>여기서 (나)조건을 고려해보면 $g(x)$가 최솟값을 가져야하므로 두 번째 그림처럼 $g(x)$가 감소했다가 증가하는 개형임을 알 수 있다. 여기서 $t$가 쭉 감소했다가 다시 치고 올라가는 지점에서($t$가 최소일 때) $f'(g(x))$가 최솟값을 갖게 되므로 좌변의 이차함수의 최솟값이 $f'\left(\dfrac52\right)$임을 알 수 있다.</p>
+    <p>다만 단순히 $t$가 감소했다가 증가한다고만 해서 $f'(t)$가 '감소→극솟값→증가'로만 나오진 않는다. 아래처럼 $t$가 $f'(t)$의 축을 지나서 감소하게 되면 $f'(t)$는 '감소→증가→극댓값→감소→증가'(↘↗↘↗)가 되므로 $t$의 최솟값인 $\dfrac52$가 $f'(t)$의 축보다 커야한다는 것도 알 수 있다.</p>
+    <iframe src="https://www.desmos.com/calculator/ruxndkoeru?embed" height="300" frameborder=0></iframe>
+    <h2 class="case">계산</h2>
+    <p>처음 식의 좌변이었던 $x^2+px+q$는 $f(x)-f(1)$을 $(x-1)$로 인수분해할 때 나오는 옆의 식이고, $t$의 최소가 $f'$의 축보다 크다는 정보 등도 결국 $f'(x)$의 식을 가지고 구해야하기 때문에 $f(x)$의 식을 그냥 내림차순으로 표기하는 편이 합리적이다. 이때 (다)조건에서 $f(0)=-3$이라 주어졌으므로 상수항도 채워넣을 수 있다.</p>
+    $$\begin{aligned}f(x)&=x^3+ax^2+bx-3\\f'(x)&=3x^2+2ax+b\\\\f(x)-f(1)&=x^3+ax^2+bx-a-b-1\\&=(x-1)(x^2+(a+1)x+a+b+1)\end{aligned}$$
+    <p>따라서 $f'(g(x))=x^2+(a+1)x+a+b+1$이다. 이 이차함수의 축은 $x=-\dfrac{a+1}2$이므로 이 값을 대입하면 최솟값을 얻는다. 그 값이 $f'\left(\dfrac52\right)$임을 이용해 식을 세워보자.</p>
+    $$\begin{aligned}f'(t)\Big|_{x=-\frac{a+1}2}&=\dfrac{a^2+2a+1}4-\dfrac{a^2+2a+1}2+a+b+1\\&=-\dfrac{a^2+2a+1}4+a+b+1\\f'\left(\dfrac52\right)&=\dfrac{75}4+5a+b\end{aligned}$$
+    <p>두 식에서 $b$를 지우면 $a$에 대한 이차방정식이 된다. 해당 방정식을 풀면 $(a+6)(a+12)=0$이 나오는데, $a=-12$일 때 $f'(x)$의 축을 구해보면</p>
+    $$f'(x)=3x^2-24x+b\\x=-\dfrac{-24}{2\cdot3}=4$$
+    <p>이때 위의 추론과정에서 $f'(x)$의 축이 $\dfrac52$보다 커야했으므로 이 경우는 모순이다. 따라서 $a=-6$이다.</p>
+    <details>
+      <summary>$a=-6$일 때 자세히 보기</summary>
+      <p>$a=-6$일 때 $f'(x)$의 축은</p>
+      $$f'(x)=3x^2-12x+b\\x=-\dfrac{-12}{2\cdot3}=2$$
+      <p>따라서 $2<\dfrac52$이므로 $a=-6$인 경우는 가능하다. (아래는 $f'$과 $g(x)$의 대략적인 형태)</p>
+      <iframe src="https://www.desmos.com/calculator/jdwxma4wzx?embed" height="300" frameborder=0></iframe>
+    </details>
+    $$\begin{aligned}f(x)&=x^3-6x^2+bx-3\\f'(x)&=3x^2-12x+b\\f'(g(x))&=x^2-5x+b-5\end{aligned}$$
+    <p>(다)조건의 2번째 식인 $f(g(1))=6$을 해석해보자. $g(x)$의 개형을 추론할 때 내린 결론은 "$g(x)$ 자체의 식은 구하기 매우 어려울 것이다"였다. 그래서 $g(x)$를 직접 구하기보단, $f'(g(x))$를 $x$에 대한 식으로 나타내었고 $f'(x)$ 자체도 알고 있으므로, 먼저 앞에 $x=1$을 대입해서 $f'(g(1))$의 값을 구하고, 그 값과 $f'(x)$의 식을 연립해서 $x$값을 역추론하는 식으로 $g(1)$의 값만 알아내보자.</p>
+    $$f'(g(1))=b-9\\f'(x)=3x^2-12x+b=b-9\\\therefore 3x^2-12x+9=0$$
+    <p>$f'(g(1))=b-9$이고, $f'(1)=f'(3)=b-9$이므로 $g(1)$은 $1$ 또는 $3$인데, $g(x)$의 최솟값이 $2.5$이므로 $g(1)=3$이다. 따라서 (다)조건의 두 번째 식은 $f(3)=6$과 같으므로, 이를 $f(x)$에 직접 대입하면</p>
+    $$f(3)=3b-30=6\\\therefore b=12$$
+    <p>따라서 $f(x)=x^3-6x^2+12x-3$이므로 $f(4)=13$이다.</p>
+    <p class="comment"><a href="../index.html">〈Search Tree로 돌아가기〉</a><br>2026.03.09 추가</p>
+  </div>
+</body>
+</html>
